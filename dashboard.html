@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+    /* CSS styles for the iframe */
+    /* CSS styles for the iframe */
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0; /* Optional: Remove default body margin */
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin: 0;
+      padding: 10px;
+      width: 84%;
+      background-color: #f0f0f0;
+      position: relative;
+    }
+
+    #myIframe {
+  position: relative;
+  width: 85%;
+  height: 600px;
+  margin-top: 20px;
+  overflow: hidden; /* Cut off the overflowing content */
+}
+
+#myIframe > iframe {
+  display: block;
+  width: 100%;
+  height: 120%; /* Set the height to 100% to fit within the parent div */
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+
+/* Add custom CSS to the content within the iframe */
+#myIframe > iframe {
+  /* Adjust the transform property to cut off the content from the bottom to the top */
+  /* transform: translateY(calc(53% - 40vh)); */
+}
+
+
+
+    /* Add background image outside the iframe */
+    body:before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../aa.jpg");
+      background-size: cover;
+      opacity: 0.5;
+      z-index: -1;
+      /* padding: color("red"); */
+    }
+
+    /* Style the export button */
+    #exportButton {
+      position: absolute;
+      top: 15px;
+      right: 150px;
+      font-size: 16px;
+      padding: 5px 10px;
+      background-color: #20d83c;
+      border: 1px solid #ffffff;
+      text-decoration: none;
+      color: #333;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    #exportButton:hover {
+      background-color: #0dca20;
+    }
+
+    /* Style the back link */
+    #backLink {
+      position: absolute;
+      top: 50%;
+      left: 60px;
+      transform: translateY(-50%);
+      font-size: 16px;
+      padding: 5px 10px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      color: #151313;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    #backLink:hover {
+      background-color: #5c5a69;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Add the title and back link -->
+ 
+  <h1>Fixed Access dashboard <a id="backLink" href="../index.html">Back</a></h1>
+
+  <!-- Add the iframe container -->
+  <div id="myIframe">
+    <iframe
+     src="https://app.powerbi.com/reportEmbed?reportId=93bb44e6-f577-4996-b011-3f93f53eade0&autoAuth=true&ctid=2a97cd69-2afd-40c9-bcf6-32581ecf57c0">
+    </iframe>
+  </div>
+
+  <!-- Add the export button -->
+  <!-- <button id="exportButton" onclick="exportLogsToCSV()">Export Logs to CSV</button> -->
+</body>
+</html>
+
+
+
